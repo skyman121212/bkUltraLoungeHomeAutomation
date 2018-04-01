@@ -1,7 +1,7 @@
 # bkUltraLoungeHomeAutomation
 Home automation tools
 
-#ip address
+# ip address
 192.168.86.182
 
 # sports apis
