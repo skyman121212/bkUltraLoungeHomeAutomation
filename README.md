@@ -5,4 +5,10 @@ Home automation tools
 192.168.86.182
 
 # sports apis
-Only pro sports - https://www.mysportsfeeds.com/data-feeds/api-docs/#
+## Only pro sports - https://www.mysportsfeeds.com/data-feeds/api-docs/#
+- Scoreboard https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20171024
+.gameScore.game where "isInProgress" = true,
+"awayScore": "--",
+"homeScore": "--",
+awayTeam, awayTeam.ID
+homeTeam, homeTeam.ID
