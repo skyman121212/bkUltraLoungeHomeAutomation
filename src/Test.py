@@ -8,9 +8,29 @@ import base64
 
 print("test")
 
-url = 'https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180401'
-headers = {'encrypted_credentials': base64.b64encode('kelseyhrubes:blakeiscute')}
-response = requests.get(url, headers=headers)
+pull_url = 'https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180401'
+USERNAME = "kelseyhrubes"
+PASSWORD = "blakeiscute"
+
+def send_request(pull_url):
+    # Request
+    try:
+        response = requests.get(
+            url={pull_url},
+            params={
+                "fordate": "20180401"
+            },
+            headers={
+                "Authorization": "Basic " + base64.b64encode('{}:{}'.format({USERNAME},{PASSWORD}).encode('utf-8')).decode('ascii')
+            }
+        )
+        print('Response HTTP Status Code: {status_code}'.format(
+            status_code=response.status_code))
+        print('Response HTTP Response Body: {content}'.format(
+            content=response.content))
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
 
 
-print(response)
+
+send_request(pull_url)
