@@ -8,9 +8,10 @@ import base64
 
 print("test")
 
-pull_url = 'https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json?fordate=20180401'
+pull_url = 'https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/scoreboard.json'
 USERNAME = "kelseyhrubes"
 PASSWORD = "blakeiscute"
+
 
 def send_request(pull_url):
     # Request
