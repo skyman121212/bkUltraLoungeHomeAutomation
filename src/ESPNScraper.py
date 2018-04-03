@@ -4,7 +4,7 @@ from enum import Enum
 from src.Team import Team
 from src.Game import Game
 
-class ESPNScrapper:
+class ESPNScraper:
 
     def __init__(self):
         self.test = "hi"
