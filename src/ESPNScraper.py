@@ -3,7 +3,7 @@ import json
 from enum import Enum
 
 
-class ESPNScrapper:
+class ESPNScraper:
 
     def __init__(self):
         self.test = "hi"
