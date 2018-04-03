@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import argparse
-from enum import Enum
 from src.ESPNScraper import Sport
 from src.ESPNScraper import ESPNScraper
 
@@ -11,7 +10,7 @@ parser.add_argument('--list-events', dest='events', type=Sport.from_string, narg
 
 args = parser.parse_args()
 
-scrapper = ESPNScrapper()
+scrapper = ESPNScraper()
 
 e = scrapper.get_events(args.events)
 
