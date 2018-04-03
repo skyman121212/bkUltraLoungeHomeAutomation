@@ -1,21 +1,36 @@
 import urllib.request
 import json
 from enum import Enum
-
+from src.Team import Team
+from src.Game import Game
 
 class ESPNScrapper:
 
     def __init__(self):
         self.test = "hi"
 
-    def list_events(self, sports):
+    def get_events(self, sports):
+        games = []
         for s in sports:
-            self.list_event(s)
+            games.extend(self.get_event(s))
 
-    def list_event(self, sport):
+        return games
+
+    def get_event(self, sport):
+        games = []
+
         with urllib.request.urlopen("{}".format(sport.value)) as url:
             data = json.loads(url.read().decode())
-        print(len(data['events']))
+
+        events = data['events']
+
+        for event in events:
+            team1 = event['competitions'][0]['competitors'][0]
+            team2 = event['competitions'][0]['competitors'][1]
+
+            games.append(Game(Team(team1['team'], team1['score']), Team(team2['team'], team2['score'])))
+
+        return games
 
 
 class Sport(Enum):

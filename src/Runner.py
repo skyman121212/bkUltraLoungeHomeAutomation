@@ -13,7 +13,10 @@ args = parser.parse_args()
 
 scrapper = ESPNScrapper()
 
-scrapper.list_events(args.events)
+e = scrapper.get_events(args.events)
+
+for event in e:
+    print(event)
 
 
 
